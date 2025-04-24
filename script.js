@@ -1,9 +1,9 @@
 //Change a static quote into a dynamic one.
 $(document).ready(function () {
-    $('#quotesCarousel').innerHTML = `<div id='loader'></div>`;
+    $('#quotesCarousel').HTML = `<div id='loader'></div>`;
     const xhr = new XMLHttpRequest();
 
-    xhr.onreadstatechange = function () {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             const data = JSON.parse(xhr.responseText);
             let carouselContent = '';
@@ -29,9 +29,10 @@ $(document).ready(function () {
                     </div>
                 </div>
                 `;
-                $('#quotesCarousel').html(carouselContent);
-            });
+        });
+        $('#quotesCarousel').html(carouselContent);
         }
+    }
     xhr.open('GET', "https://smileschool-api.hbtn.info/quotes", true);
     xhr.send();
 })
