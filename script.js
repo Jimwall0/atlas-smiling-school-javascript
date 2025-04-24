@@ -4,7 +4,7 @@ $(document).ready(function () {
     const xhr = new XMLHttpRequest();
 
     xhr.onreadstatechange = function () {
-        if (xhr.readyState === 4 && xhrstatus === 200) {
+        if (xhr.readyState === 4 && xhr.status === 200) {
             const data = JSON.parse(xhr.responseText);
             let carouselContent = '';
 
