@@ -10,6 +10,10 @@ These group of web pages were coded from scratch with the help of the Boostrap F
 
 The designs were planned for Desktop, Tablet, and Mobile.
 
+# Host
+
+[atlas-smiling-school-javascript](https://jimwall0.github.io/atlas-smiling-school-javascript/)
+
 # Homepage
 
 | **Desktop (Width: 1440 px)**                              | **Tablet (Width: 768 px)**                              | **Mobile (Width: 576 px)**                              |
@@ -75,3 +79,5 @@ The Holberton Smiling School web pages were developed by sections using the Boot
 # Author:
 
 Jhoan Zamora: [jzamora5](https://github.com/jzamora5)
+
+Tsim Muaj Yang: [Jimwall0](https://github.com/jimwall0)
