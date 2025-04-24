@@ -32,7 +32,7 @@ $(document).ready(function () {
         });
         $('#quotesCarousel').html(carouselContent);
         }
-    }
+    };
     xhr.open('GET', "https://smileschool-api.hbtn.info/quotes", true);
     xhr.send();
 })
