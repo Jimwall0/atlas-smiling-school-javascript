@@ -37,4 +37,22 @@ $(document).ready(function () {
     xhr.send();
 })
 
-//Replace static video cards by dynamic loading
+//Replace static quotes by dynamic loading
+$(document).ready(function () {
+    $('pricingCarousel').html(`<div class='loader'></div>`);
+    const xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const data = JSON.parse(xhr.responseText);
+            let carouselContent = '';
+
+            data.forEach((key, index) => {
+                carouselContent += `
+                
+                `
+            })
+        }
+    }
+    xhr.open('GET', "https://smileschool-api.hbtn.info/quotes", true);
+})
