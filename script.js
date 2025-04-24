@@ -77,3 +77,30 @@ $(document).ready(function () {
     xhr.open('GET', "https://smileschool-api.hbtn.info/quotes", true);
     xhr.send();
 })
+
+//Task 5: Replace static video card by dynamic loading
+$(document).ready(function () {
+    let url = 'https://smileschool-api.hbtn.info/courses';
+    const xhttp = newXMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myFunction(this);
+        }
+    };
+    xhttp.open('GET', url, true);
+    xhttp.send();
+
+    function myFunction(xml) {
+
+    }
+
+    function clear() {
+        $('#video').empty();
+    }
+
+    function show() {
+        $('#video').html(`<div class='loader'></div>`);
+    }
+
+    
+})
