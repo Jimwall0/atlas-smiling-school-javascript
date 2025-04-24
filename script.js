@@ -36,3 +36,24 @@ $(document).ready(function () {
     xhr.open('GET', "https://smileschool-api.hbtn.info/quotes", true);
     xhr.send();
 })
+
+//Replace static video cards by dynamic loading
+$(document).read(function () {
+    $('#pricingCarousel').html(`<div class="loader"></div>`);
+    const xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const data = JSON.parse(xhr.responseText);
+            let carouselContent = '';
+
+            data.forEach((key, index) => {
+                carouselContent += `
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <div class="row mx-auto align-items-center">
+                    <div class="col-12 col-sm-2 col-lg
+                `
+            });
+        }
+    }
+})
