@@ -1,6 +1,6 @@
 //Change a static quote into a dynamic one.
 $(document).ready(function () {
-    $('#quotesCarousel').html(`<div id='loader'></div>`);
+    $('#quotesCarousel').html(`<div class='loader'></div>`);
     const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
