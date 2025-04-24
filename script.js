@@ -39,7 +39,7 @@ $(document).ready(function () {
 
 //Replace static quotes by dynamic loading
 $(document).ready(function () {
-    $('pricingCarousel').html(`<div class='loader'></div>`);
+    $('#pricingCarousel').html(`<div class='loader'></div>`);
     const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
@@ -49,11 +49,11 @@ $(document).ready(function () {
 
             data.forEach((key, index) => {
                 carouselContent += `
-                <div class="carousel-item active">
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
                     <div class="row mx-auto align-items-center">
                     <div class="col-12 col-sm-2 col-lg-2 offset-lg-1 text-center">
                         <img
-                        src="images/profile_5.jpg"
+                        src="${key.pic_url}"
                         class="d-block align-self-center"
                         alt="Carousel Pic 1"
                         />
@@ -61,18 +61,17 @@ $(document).ready(function () {
                     <div class="col-12 col-sm-7 offset-sm-2 col-lg-9 offset-lg-0">
                         <div class="quote-text">
                         <p class="text-white">
-                            « Those tutorials are concise and go straight to the
-                            point. I can’t think of a better place to learn smiling.
-                            And it’s so fun!
+                            ${key.text}
                         </p>
-                        <h4 class="text-white font-weight-bold">Person Name</h4>
-                        <span class="text-white">weather presenter</span>
+                        <h4 class="text-white font-weight-bold">${key.name}</h4>
+                        <span class="text-white">${key.title}</span>
                         </div>
                     </div>
                     </div>
                 </div>
                 `
             })
+            $('#pricingCarousel').html(carouselContent);
         }
     }
     xhr.open('GET', "https://smileschool-api.hbtn.info/quotes", true);
