@@ -80,7 +80,7 @@ $(document).ready(function () {
 
 //Task 5: Replace static video card by dynamic loading
 $(document).ready(function () {
-    let url = 'https://smileschool-api.hbtn.info/courses';
+    const url = `https://smileschool-api.hbtn.info/courses?q=${$('#search')}&topic=${}&sort=${}`;
     const xhttp = newXMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -102,5 +102,8 @@ $(document).ready(function () {
         $('#video').html(`<div class='loader'></div>`);
     }
 
-    
+    function render() {
+        clear();
+
+    }
 })
